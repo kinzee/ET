@@ -59,6 +59,7 @@ using System.Collections.Generic;
 
         public Dictionary<{{declaring_type_name key_type}}, {{declaring_type_name value_type}}> DataMap => _dataMap;
         public List<{{declaring_type_name value_type}}> DataList => _dataList;
+        public Dictionary<{{declaring_type_name key_type}}, {{declaring_type_name value_type}}> GetAll() => _dataMap;
 
     {{~if value_type.is_dynamic~}}
         public T GetOrDefaultAs<T>({{declaring_type_name key_type}} key) where T : {{declaring_type_name value_type}} => _dataMap.TryGetValue(key, out var v) ? (T)v : null;
